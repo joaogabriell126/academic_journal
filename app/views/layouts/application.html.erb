@@ -18,12 +18,32 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="bg-gray-50">
+    <header class="bg-white flex justify-between px-4 sm:px-6 lg:px-8 h-16 items-center">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-book-open text-2xl"></i>
+        <h2 class="text-xl font-bold">Portal Científico</h2>
+      </div>
+      
+      <div class=" md:hidden">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <nav class="hidden md:flex">
+        <ul>
+          <li><%= link_to "Início", root_path %></li>
+          <li><%= link_to "Artigos", articles_path %></li>
+          <li><%= link_to "Área Administrativa", login_path %></li>
+        </ul>
+      </nav>
+    </header>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
