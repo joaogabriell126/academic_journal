@@ -1,10 +1,7 @@
 class PagesController < ApplicationController
-    def index
+    def home
     end
 
-    def articles
-    end
-
-    def admin_login
+    def acervo
     end
 end
