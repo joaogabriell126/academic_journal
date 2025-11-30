@@ -1,0 +1,33 @@
+<dialog id="modal_novo_artigo" class="m-auto">
+    <header class="flex justify-between">
+        <h2>Novo Artigo</h2>
+        <p>X</p>
+    </header>
+    <%= render 'form', article: @new_article %>
+</dialog>
+
+<section>
+    <div>
+        <h1>Gerenciar Artigos</h1>
+        <p>Crie, edite ou remova publicações do portal.</p>
+        <button onclick="document.getElementById('modal_novo_artigo').showModal()"><i class="fa-solid fa-plus"></i>Novo Artigo</button>
+    </div>
+    <div>
+        <% @articles.each do |article| %>
+            <article class="card--admin">
+                <div class="flex justify-between">
+                    <p><%=article.area %></p>
+                    <p><%=article.status %></p>
+                </div>
+                <h3><%=article.title %></h3>
+                <div><i class="fa-regular fa-user"></i><%=article.author %></div>
+                <div><i class="fa-regular fa-calendar"></i><%=article.published_at %></div>
+                <div>
+                    <button>Editar</button>
+                    <button>Apagar</button>
+                </div>
+            </article>
+        <% end %>
+    </div>
+</section>
+

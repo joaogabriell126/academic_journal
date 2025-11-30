@@ -1,0 +1,36 @@
+<%= form_with(model: article) do |form| %>
+    <div>
+        <%= form.label :title, "Título do Artigo"%>
+        <%= form.text_field :title %>
+    </div>
+    <div>
+        <%= form.label :author, "Autor"%>
+        <%= form.text_field :author %>
+    </div>
+    <div>
+        <%= form.label :published_at, "Data da Publicação"%>
+        <%= form.date_field :published_at %>
+    </div>
+
+    <div>
+        <%= form.label :area, "Área de Estudo", class: "block text-sm font-medium text-gray-700" %>
+        <%= form.select :area, 
+            [['Medicina', 'medicine'], ['Tecnologia', 'technology'], ['Meio ambiente', 'environment'], ['Astronomia', 'astronomy']], 
+            { prompt: "Selecione..." }, 
+            { class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border bg-white" } 
+        %>
+    </div>
+
+    <div>
+        <%= form.label :status, "Status"%>
+        <%= form.select :status, [['Postado', 'posted'], ['Rascunho','draft']], {prompt: "Escolha uma área"}, {}%>
+    </div>
+    <div>
+        <%= form.label :abstract, "Resumo"%>
+        <%= form.text_area :abstract %>
+    </div>
+    <div>
+        <button type="button">Cancelar</button>
+        <button type="submit">Salvar</button>
+    </div>
+<% end %>
