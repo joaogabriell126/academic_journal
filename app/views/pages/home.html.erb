@@ -1,8 +1,43 @@
 <section class="bg-primary py-24 md:py-30 px-4 text-center">
     <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 leading-tight">Ciência Aberta para <br> um Futuro Inovador</h1>
     <p class=" text-white text-lg md:text-xl max-w-3xl mb-10 mx-auto">Conectando pesquisadores e sociedade através de um acervo digital transparente. Acesse publicações revisadas por pares e dados confiáveis.</p>
-    <%= link_to articles_path, class: "inline-flex bg-white py-4 px-8" do %>
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <span>Explorar Acervo</span>
+    <%= link_to acervo_path, class: "flex items-center inline-flex bg-white py-4 px-8 text-primary rounded-lg" do %>
+        <i class="fa-solid fa-magnifying-glass mr-2"></i>
+        <span class="font-bold">Explorar Acervo</span>
     <% end %>
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-2 px-4 md:px-17 py-24 md:py-30 gap-16">
+    <div>
+        <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2">Nossa Missão</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-6 leading-tight">Excelência em Pesquisa e Divulgação Científica</h2>
+        <p class="text-gray-600 text-lg mb-6 leading-relaxed">Nossa instituição se dedica a fomentar a pesquisa e garantir que descobertas importantes cheguem a estudantes, profissionais e à sociedade em geral.</p>
+        <ul class="space-y-4">
+            <li class="flex gap-3"><div class="bg-secundary text-primary h-6 w-6 rounded-full flex items-center justify-center"><i class="fa-solid fa-check text-[10px]"></i></div>Acesso democratizado ao conhecimento</li>
+            <li class="flex gap-3"><div class="bg-secundary text-primary h-6 w-6 rounded-full flex items-center justify-center"><i class="fa-solid fa-check text-[10px]"></i></div>Rigor científico e revisão por pares</li>
+            <li class="flex gap-3"><div class="bg-secundary text-primary h-6 w-6 rounded-full flex items-center justify-center"><i class="fa-solid fa-check text-[10px]"></i></div>Fomento à inovação tecnológica</li>
+        </ul>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+        <div class="card">
+            <i class="fa-solid fa-book-open text-2xl"></i>
+            <p>Acervo Digital</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-regular fa-file text-2xl"></i>
+            <p>Acervo Digital</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-book-open text-2xl"></i>
+            <p>Acervo Digital</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-book-open text-2xl"></i>
+            <p>Acervo Digital</p>
+        </div>
+    </div>
 </section>

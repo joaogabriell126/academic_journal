@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :articles
 
-  get "arcevo", to: "pages#arcevo"
+  get "acervo", to: "pages#acervo"
   get "login", to: "pages#admin_login"
   root "pages#home"
 end

@@ -26,7 +26,7 @@
   </head>
 
   <body class="bg-gray-50">
-    <header class="bg-white flex justify-between px-4 sm:px-6 lg:px-8 h-16 items-center">
+    <header class="bg-white flex justify-between px-4 sm:px-6 lg:px-8 h-16 items-center fixed right-0 top-0 left-0">
       <div class="flex items-center gap-2">
         <i class="fa-solid fa-book-open text-2xl"></i>
         <h2 class="text-xl font-bold">Portal Científico</h2>
@@ -37,9 +37,9 @@
       </div>
 
       <nav class="hidden md:flex">
-        <ul>
+        <ul class="flex items-center gap-8">
           <li><%= link_to "Início", root_path %></li>
-          <li><%= link_to "Artigos", articles_path %></li>
+          <li><%= link_to "Artigos", acervo_path %></li>
           <li><%= link_to "Área Administrativa", login_path %></li>
         </ul>
       </nav>
