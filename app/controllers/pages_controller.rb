@@ -3,5 +3,6 @@ class PagesController < ApplicationController
     end
 
     def acervo
+        @articles = Article.all
     end
 end

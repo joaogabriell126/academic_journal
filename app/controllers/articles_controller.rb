@@ -17,6 +17,16 @@ class ArticlesController < ApplicationController
         end
     end
 
+    def destroy
+        # Correção: Article no singular
+        @article = Article.find(params[:id]) 
+        
+        @article.destroy
+
+        # Correção: status: :see_other é essencial para o Turbo não se perder no redirect
+        redirect_to articles_path, status: :see_other
+    end
+
     private
 
     def articles_params
