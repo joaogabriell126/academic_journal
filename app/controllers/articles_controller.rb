@@ -3,17 +3,36 @@ class ArticlesController < ApplicationController
 
     def index
         @articles = Article.all 
-        @new_article = Article.new 
+    end
+
+    def new
+        @article = Article.new 
     end
 
     def create
-        @new_article = Article.new(articles_params)
-        if @new_article.save
+        @article = Article.new(articles_params)
+        if @article.save
             redirect_to articles_path, notice: "Artigo criado com sucesso!"
         else
             # Se der erro, precisamos carregar a lista de novo para o fundo da tela não quebrar
             @articles = Article.all
             render :index, status: :unprocessable_entity
+        end
+    end
+
+    def edit
+        @article = Article.find(params[:id])
+    end
+
+    # 2. Ação UPDATE: Recebe os dados e tenta salvar
+    def update
+        @article = Article.find(params[:id])
+
+        # Tenta atualizar usando os "Strong Parameters" (segurança)
+        if @article.update(articles_params)
+        redirect_to articles_path # Sucesso: Vai para a página do artigo
+        else
+        render :edit, status: :unprocessable_entity # Erro: Mostra o form de novo
         end
     end
 

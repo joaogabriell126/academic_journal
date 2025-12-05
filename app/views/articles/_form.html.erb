@@ -1,4 +1,4 @@
-<%= form_with(model: article, class: "grid grid-cols-1 flex-1 p-6 gap-6 overflow-y-auto") do |form| %>
+<%= form_with(model: article, data: { turbo_frame: "_top" }, class: "grid grid-cols-1 flex-1 p-6 gap-6 overflow-y-auto") do |form| %>
     <div>
         <%= form.label :title, "Título do Artigo"%>
         <%= form.text_field :title, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"%>
@@ -23,7 +23,7 @@
 
     <div>
         <%= form.label :status, "Status"%>
-    <%= form.select :status, [['Postado', 'posted'], ['Rascunho','draft']], {prompt: "Escolha uma área"}, { class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition" }%>
+        <%= form.select :status, [['Postado', 'posted'], ['Rascunho','draft']], {prompt: "Escolha uma área"}, { class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition" }%>
     </div>
     <div>
         <%= form.label :abstract, "Resumo"%>
